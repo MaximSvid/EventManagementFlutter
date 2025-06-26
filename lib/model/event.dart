@@ -1,5 +1,6 @@
 // Modellklasse für ein Event in der Event-Management-Anwendung
 
+import 'package:event_management_flutter/model/event_registration.dart';
 import 'package:event_management_flutter/model/user.dart';
 
 class Event {
