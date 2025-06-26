@@ -1,12 +1,11 @@
-// Bildschirm zum Erstellen eines neuen Events. 
+// Bildschirm zum Erstellen eines neuen Events.
 // Verwaltet die Eingaben des Benutzers und kommuniziert mit dem EventViewModel.
 
+import 'package:event_management_flutter/viewModel/auth_view_model.dart';
+import 'package:event_management_flutter/viewModel/event_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/event.dart';
-import '../model/user.dart';
-import '../view_model/auth_view_model.dart';
-import '../view_model/event_view_model.dart';
 import '../widget/custom_text_field.dart';
 
 class CreateEventScreen extends StatefulWidget {
@@ -15,7 +14,8 @@ class CreateEventScreen extends StatefulWidget {
 }
 
 class _CreateEventScreenState extends State<CreateEventScreen> {
-  final _formKey = GlobalKey<FormState>(); // Schlüssel für das Formular zur Validierung
+  final _formKey =
+      GlobalKey<FormState>(); // Schlüssel für das Formular zur Validierung
   String title = ''; // Titel des Events
   String? description; // Beschreibung des Events
   DateTime date = DateTime.now(); // Datum des Events
@@ -55,8 +55,8 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
               CustomTextField(
                 label: 'Max Participants',
                 keyboardType: TextInputType.number,
-                onChanged: (value) =>
-                    maxParticipants = int.tryParse(value) ?? null,
+                onChanged:
+                    (value) => maxParticipants = int.tryParse(value) ?? null,
               ),
               // Button zum Erstellen des Events
               ElevatedButton(
@@ -82,10 +82,14 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
               ),
               // Anzeige von Fehlermeldungen
               if (eventViewModel.errorMessage != null)
-                Text(eventViewModel.errorMessage!, style: TextStyle(color: Colors.red)),
+                Text(
+                  eventViewModel.errorMessage!,
+                  style: TextStyle(color: Colors.red),
+                ),
             ],
           ),
         ),
       ),
     );
   }
+}

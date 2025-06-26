@@ -1,7 +1,7 @@
+import 'package:event_management_flutter/viewModel/auth_view_model.dart';
+import 'package:event_management_flutter/viewModel/event_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../view_model/auth_view_model.dart';
-import '../view_model/event_view_model.dart';
 import '../widget/event_card.dart';
 
 class HomeView extends StatefulWidget {
