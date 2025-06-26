@@ -2,6 +2,7 @@
 
 import 'package:event_management_flutter/viewModel/auth_view_model.dart';
 import 'package:event_management_flutter/viewModel/event_view_model.dart';
+import 'package:event_management_flutter/widget/event_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,12 +23,12 @@ class ProfileScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Anzeige der Benutzerdaten
-                  Text('Username: ${user.userName}', style: Theme.of(context).textTheme.headline6),
+                  Text('Username: ${user.userName}', style: Theme.of(context).textTheme.bodyMedium),
                   Text('Email: ${user.email}'),
                   Text('Role: ${user.role}'),
                   SizedBox(height: 16),
                   // Anzeige der eigenen Events
-                  Text('My Events', style: Theme.of(context).textTheme.headline6),
+                  Text('My Events', style: Theme.of(context).textTheme.bodyMedium),
                   Expanded(
                     child: ListView.builder(
                       itemCount: eventViewModel.events
